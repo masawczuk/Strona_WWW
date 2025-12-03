@@ -1,0 +1,269 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: #ffffff;
+  color: #000;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s; /* Dodane przejście dla płynności */
+}
+
+/* --- TRYB CIEMNY --- */
+body.dark-mode {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark-mode header {
+  border-bottom: 1px solid #333;
+}
+
+body.dark-mode nav a {
+  color: #f1f1f1;
+}
+
+body.dark-mode .burger span {
+  background: #f1f1f1;
+}
+
+body.dark-mode .hero {
+  background: #333;
+}
+
+body.dark-mode .gallery div {
+  background: #444;
+}
+
+body.dark-mode footer {
+  border-top: 1px solid #333;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background: #333;
+  color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+body.dark-mode nav { /* Dostosowanie menu w trybie mobilnym dla trybu ciemnego */
+  background: #1e1e1e;
+}
+/* -------------------- */
+
+
+/* HEADER */
+header {
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* MENU */
+nav {
+  display: flex;
+  gap: 28px;
+  align-items: center; /* Wyrównanie przycisku trybu ciemnego z linkami */
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  font-weight: 300;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  opacity: 0.6;
+}
+
+/* PRZYCISK TRYBU CIEMNEGO */
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #000; /* Domyślny kolor */
+  margin-left: 15px;
+  padding: 5px;
+  transition: color 0.3s;
+}
+
+body.dark-mode .dark-mode-toggle {
+  color: #f1f1f1;
+}
+
+.dark-mode-toggle:hover {
+  opacity: 0.7;
+}
+
+/* BURGER */
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.burger span {
+  width: 30px;
+  height: 3px;
+  background: black;
+  display: block;
+  transition: 0.3s;
+}
+
+/* HERO */
+.hero {
+  height: 55vh;
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 22px;
+  max-width: 600px;
+}
+
+/* CONTENT SECTION */
+.section {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  font-size: 20px;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 40px;
+}
+
+.gallery div {
+  height: 280px;
+  background: #ccc;
+  border-radius: 12px;
+}
+
+.gallery img {
+  height: 280px;
+  width: 350px;
+}
+
+.gallery p{
+  text-align: center;
+}
+
+/* CONTACT FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 500px;
+}
+
+input, textarea {
+  padding: 12px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-size: 18px;
+}
+
+button {
+  padding: 14px 20px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* FOOTER */
+footer {
+  padding: 30px;
+  text-align: center;
+  font-size: 18px;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}
+
+/* -------------------------------------------- */
+/* RESPONSYWNOŚĆ */
+/* -------------------------------------------- */
+
+/* TABLETY (max 900px) */
+@media (max-width: 900px) {
+  nav {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px 40px;
+    display: none;
+    border-top: 1px solid #ddd;
+  }
+  
+  /* Dostosowanie przycisku dla trybu mobilnego */
+  nav .dark-mode-toggle {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+/* TELEFONY (max 600px) */
+@media (max-width: 600px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+}
