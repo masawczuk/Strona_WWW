@@ -10,7 +10,7 @@ body {
   background: #ffffff;
   color: #000;
   line-height: 1.6;
-  transition: background-color 0.3s, color 0.3s; /* Dodane przejście dla płynności */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* --- TRYB CIEMNY --- */
@@ -50,11 +50,9 @@ body.dark-mode textarea {
   border: 1px solid #555;
 }
 
-body.dark-mode nav { /* Dostosowanie menu w trybie mobilnym dla trybu ciemnego */
+body.dark-mode nav {
   background: #1e1e1e;
 }
-/* -------------------- */
-
 
 /* HEADER */
 header {
@@ -69,15 +67,15 @@ header {
 
 .logo {
   display: flex;
-  align-items: center;   /* wyśrodkowanie tekstu w pionie */
-  gap: 12px;             /* odstęp między obrazkiem a tekstem */
+  align-items: center;
+  gap: 12px;
   font-size: 28px;
   font-weight: 700;
   letter-spacing: 2px;
 }
 
 .logo img {
-  height: 50px;          /* dopasuj rozmiar obrazka */
+  height: 50px;
   width: auto;
   display: block;
 }
@@ -86,7 +84,7 @@ header {
 nav {
   display: flex;
   gap: 28px;
-  align-items: center; /* Wyrównanie przycisku trybu ciemnego z linkami */
+  align-items: center;
 }
 
 nav a {
@@ -107,7 +105,7 @@ nav a:hover {
   border: none;
   cursor: pointer;
   font-size: 24px;
-  color: #000; /* Domyślny kolor */
+  color: #000;
   margin-left: 15px;
   padding: 5px;
   transition: color 0.3s;
@@ -167,27 +165,39 @@ body.dark-mode .dark-mode-toggle {
   font-size: 20px;
 }
 
-/* GALLERY */
+/* ===================== */
+/* GALLERY – RESPONSIVE  */
+/* ===================== */
+
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
   padding: 40px;
 }
 
+/* kontener jednego zdjęcia */
 .gallery div {
-  height: 280px;
-  background: #ccc;
+  width: 100%;
   border-radius: 12px;
+  overflow: hidden;
+  background: #ccc;
 }
 
+/* zdjęcie */
 .gallery img {
-  height: 280px;
-  width: 350px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
 }
 
-.gallery p{
+/* podpis */
+.gallery p {
   text-align: center;
+  padding: 12px 0;
+  font-weight: 600;
+  background: transparent;
 }
 
 /* CONTACT FORM */
@@ -198,7 +208,8 @@ form {
   max-width: 500px;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 12px;
   border: 1px solid #aaa;
   border-radius: 6px;
@@ -228,11 +239,10 @@ footer {
   margin-top: 40px;
 }
 
-/* -------------------------------------------- */
-/* RESPONSYWNOŚĆ */
-/* -------------------------------------------- */
+/* ===================== */
+/* RESPONSYWNOŚĆ         */
+/* ===================== */
 
-/* TABLETY (max 900px) */
 @media (max-width: 900px) {
   nav {
     position: absolute;
@@ -246,8 +256,7 @@ footer {
     display: none;
     border-top: 1px solid #ddd;
   }
-  
-  /* Dostosowanie przycisku dla trybu mobilnego */
+
   nav .dark-mode-toggle {
     margin-left: 0;
     margin-top: 10px;
@@ -262,7 +271,6 @@ footer {
   }
 }
 
-/* TELEFONY (max 600px) */
 @media (max-width: 600px) {
   header {
     padding: 15px 20px;
