@@ -190,6 +190,7 @@ body.dark-mode .dark-mode-toggle {
 /* HERO - Dramatyczny z animacją i lepszym kontrastem */
 /* ===================== */
 .hero {
+  min-height: 300px;
   height: 40vh;
   background: linear-gradient(135deg, #b64bd6 0%, #d28adf 30%, #f06292 70%, #f8b0c9 100%);
   display: flex;
