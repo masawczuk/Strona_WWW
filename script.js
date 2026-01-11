@@ -52,7 +52,7 @@ function wyslijFormularz() {
   const subject = encodeURIComponent("Kontakt z formularza od " + imie);
   const body = encodeURIComponent("Email: " + email + "\n\nWiadomość:\n" + wiadomosc);
 
-  window.location.href = `mailto:malwinasawczuk@gmail.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:deepf8666@gmail.com?subject=${subject}&body=${body}`;
 
   return false;
 }
